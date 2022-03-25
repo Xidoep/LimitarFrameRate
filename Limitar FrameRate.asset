@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c460ed18bf3761c4f96e170fff893524, type: 3}
   m_Name: Limitar FrameRate
   m_EditorClassIdentifier: 
-  guardat: {fileID: 11400000, guid: d8ba27ffe88b6fc4cb63b16236c5a60f, type: 2}
+  guardat: {fileID: 0}
   frameRate: 30
