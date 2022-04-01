@@ -10,13 +10,13 @@ public class Utils_LimitarFrameRate : ScriptableObject
     const string KEY_GUARDAT_FARMERATE = "FrameRate";
     [SerializeField] Guardat guardat;
     //3-12
-    [SerializeField] int frameRate;
+    [Tooltip("The max framerate allowed. This will be multiplied by 10 when applies")][SerializeField] [Range(3, 12)] int frameRate;
     
 
 
     private void OnEnable()
     {
-        Debugar.Log("OnEnable - Utils_LimitarFrameRate");
+        Debugar.Log("[OnEnable] OnEnable() => LimitarFrameRate()");
         //frameRate = (int)guardat.Get(KEY_GUARDAT_FARMERATE, 6);
         Application.targetFrameRate = frameRate * 10;
     }
@@ -28,14 +28,11 @@ public class Utils_LimitarFrameRate : ScriptableObject
     {
         Application.targetFrameRate = frameRate * 10;
         //guardat.SetLocal(KEY_GUARDAT_FARMERATE, (int)frameRate);
-    } 
-
-
-
-
-
-    void OnValidate()
-    {
-        frameRate = Mathf.Clamp(frameRate, 30, 120);
     }
+
+    private void OnValidate()
+    {
+        guardat = XS_Editor.LoadGuardat<Guardat>();
+    }
+
 }
