@@ -9,10 +9,9 @@ public class Utils_LimitarFrameRate : ScriptableObject
 {
     const string KEY_GUARDAT_FARMERATE = "FrameRate";
     [SerializeField] Guardat guardat;
-    //3-12
-    [Tooltip("The max framerate allowed. This will be multiplied by 10 when applies")][SerializeField] [Range(3, 12)] int frameRate;
     
-
+    [Tooltip("The max framerate allowed. This will be multiplied by 10 when applies")]
+    [SerializeField,Range(1, 12)] int frameRate;
 
     private void OnEnable()
     {
